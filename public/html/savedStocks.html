@@ -1,0 +1,21 @@
+<h2>Saved Stocks</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>LastPrice</th>
+      <th>Daily high</th>
+      <th>Save Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat='key in savedStockArray track by $index'>
+      
+      <td>{{key.symbol}}</td>
+
+      <td><button class='btn btn-danger' ng-click='deleteStock(key, $index)'><span class='glyphicon glyphicon-remove'></span></button></td>
+    </tr>
+  </tbody>
+</table>

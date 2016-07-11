@@ -1,0 +1,27 @@
+<h2>nonRegisteredUsers</h2>
+<div>
+<form ng-submit='getGeneralStocks(stock)'>
+
+Enter Stock name: <input type="text" ng-model='stock.Name'>
+<button class='btn btn-info' >Sumbit</button>
+</form>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>LastPrice</th>
+      <th>Daily high</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat='key in stocks track by $index'>
+      <td>{{key.Name}}</td>
+      <td>{{key.Symbol}}</td>
+      <td>{{key.LastPrice}}</td>
+      <td>{{key.High}}</td>
+    </tr>
+  </tbody>
+</table>

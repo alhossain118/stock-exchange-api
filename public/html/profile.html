@@ -1,0 +1,50 @@
+<h1>Profile</h1>
+
+<img ng-src="{{user.profileImage}}">
+<button ng-click='superButton()'>Super Button</button>
+<!-- <pre>{{user | json}}</pre> -->
+
+
+
+
+<!-- <button class='btn btn-danger' ng-click='editEmail()'> Edit</button> -->
+<button class='btn btn-info' ui-sref='profileEditPage({profileId: user._id})'>Edit Profile</button>
+<input type="text" ng-hide='inputField' ng-model='changedEmail'>
+
+<!-- <button ng-click='goToEditProfilePage()'></button> -->
+<!-- <button ng-hide='inputField' ng-click='saveEdit()'>Submit</button> -->
+<br><br>
+
+<h3>Bio-data</h3>
+{{user.bioData}}
+
+<h2>check stocks</h2>
+
+<form ng-submit='submitStockName(stockInfo)'>
+  Look up Stock: <input type="text" ng-model='stockInfo.Name'>
+
+
+  <button class='btn'> Check stock</button>
+
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>LastPrice</th>
+      <th>Daily high</th>
+      <th>Save Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat='key in stocks track by $index'>
+      <td>{{key.Name}}</td>
+      <td>{{key.Symbol}}</td>
+      <td>{{key.LastPrice}}</td>
+      <td>{{key.High}}</td>
+      <td><button class='btn btn-success' ng-click='saveStock(key)'><span class='glyphicon glyphicon-ok'></span></button></td>
+    </tr>
+  </tbody>
+</table>
